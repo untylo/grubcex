@@ -40,7 +40,7 @@ static const struct grub_arg_option options[] =
     {"uuid", 'u', 0, N_("Mount by UUID."), 0, 0},
     /* TRANSLATORS: It's still restricted to cryptodisks only.  */
     {"all", 'a', 0, N_("Mount all."), 0, 0},
-    {"header", 'H', 0, N_("Read LUKS header from file"), 0, ARG_TYPE_STRING},
+    {"boot", 'b', 0, N_("Mount all volumes with `boot' flag set."), 0, 0},
     {"keyfile", 'k', 0, N_("Key file"), 0, ARG_TYPE_STRING},
     {"keyfile-offset", 'O', 0, N_("Key file offset (bytes)"), 0, ARG_TYPE_INT},
     {"keyfile-size", 'S', 0, N_("Key file data size (bytes)"), 0, ARG_TYPE_INT},
