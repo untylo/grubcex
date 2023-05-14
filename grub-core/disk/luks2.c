@@ -542,7 +542,9 @@ luks2_decrypt_key (grub_uint8_t *out_key,
 
 static grub_err_t
 luks2_recover_key (grub_disk_t source,
-		   grub_cryptodisk_t crypt)
+		   grub_cryptodisk_t crypt,
+                 grub_uint8_t *keyfile_bytes,
+                 grub_size_t keyfile_bytes_size)
 {
   grub_uint8_t candidate_key[GRUB_CRYPTODISK_MAX_KEYLEN];
   char passphrase[MAX_PASSPHRASE], cipher[32];
