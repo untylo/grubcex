@@ -59,6 +59,9 @@ typedef enum
 #define GRUB_CRYPTODISK_GF_LOG_BYTES (GRUB_CRYPTODISK_GF_LOG_SIZE - 3)
 #define GRUB_CRYPTODISK_GF_BYTES (1U << GRUB_CRYPTODISK_GF_LOG_BYTES)
 #define GRUB_CRYPTODISK_MAX_KEYLEN 128
+#define GRUB_CRYPTODISK_MAX_KEYFILE_SIZE 8192
+
+
 
 struct grub_cryptodisk;
 
@@ -119,8 +122,9 @@ struct grub_cryptodisk_dev
 
   grub_cryptodisk_t (*scan) (grub_disk_t disk, const char *check_uuid,
 			     int boot_only);
-  grub_err_t (*recover_key) (grub_disk_t disk, grub_cryptodisk_t dev);
+  grub_err_t (*recover_key) (grub_disk_t disk, grub_cryptodisk_t dev, grub_uint8_t *key, grub_size_t keyfile_size);
 };
+
 typedef struct grub_cryptodisk_dev *grub_cryptodisk_dev_t;
 
 extern grub_cryptodisk_dev_t EXPORT_VAR (grub_cryptodisk_list);
